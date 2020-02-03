@@ -15,10 +15,16 @@
   },
   "dependencies": {
     "gatsby": "^2.19.7",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-source-prismic": "^2.3.0-alpha.3",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-media": "^1.10.0",
+    "styled-bootstrap-grid": "^3.0.5",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "prettier": "^1.19.1"
   },
   "repository": {
