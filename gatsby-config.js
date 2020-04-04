@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -37,6 +37,18 @@ module.exports = {
     //   },
     // },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Website Name`,
+        short_name: `Website Name`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        // icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `repository-name`,
@@ -54,4 +66,4 @@ module.exports = {
       },
     },
   ],
-}
+};
