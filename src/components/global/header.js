@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react"
-import styled from "styled-components"
-import { StaticQuery, graphql, Link } from "gatsby"
-import Media from "react-media"
-
-// Hooks
-import { useScrollPosition } from "@n8tb1t/use-scroll-position"
-// import { useWindowScroll } from "react-use";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { StaticQuery, graphql, Link } from "gatsby";
+import Media from "react-media";
 
 // Components
 // import DesktopMenu from "../navigation/desktop-menu"
@@ -27,45 +23,25 @@ const HeaderWrapper = styled.header`
   border-bottom: 1px solid #000;
   z-index: 200;
 
-  line-height: ${props => props.hideOnScroll}px;
-
   @media (max-width: 768px) {
     padding: 0 10px;
 
     line-height: 35px;
   }
-`
+`;
 
 const Header = ({ location, data, pageTitle }) => {
-  const [windowWidth, setWindowWidth] = useState(768)
-  const [hideOnScroll, setHideOnScroll] = useState(true)
+  const [windowWidth, setWindowWidth] = useState(768);
+  const [hideOnScroll, setHideOnScroll] = useState(true);
 
   useEffect(() => {
     if (typeof window !== `undefined`) {
-      let getWindowWidth = window.innerWidth
-      setWindowWidth(getWindowWidth)
+      let getWindowWidth = window.innerWidth;
+      setWindowWidth(getWindowWidth);
     }
-  }, [])
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      // const isShow = currPos.y > prevPos.y;
-      // if (isShow !== hideOnScroll) setHideOnScroll(isShow);
-
-      // If current scroll position is greater than the height of the header then hide it
-      setHideOnScroll(currPos.y >= -46)
-    },
-    [hideOnScroll]
-  )
-
+  }, []);
   return (
-    <HeaderWrapper
-      hideOnScroll={
-        location.pathname.includes(`/project`) && hideOnScroll === true
-          ? 45
-          : 35
-      }
-    >
+    <HeaderWrapper>
       <Media
         queries={{ medium: "(max-width: 768px)" }}
         defaultMatches={{ medium: windowWidth === 768 }}
@@ -92,8 +68,8 @@ const Header = ({ location, data, pageTitle }) => {
         )}
       />
     </HeaderWrapper>
-  )
-}
+  );
+};
 
 export default props => (
   <StaticQuery
@@ -111,4 +87,4 @@ export default props => (
     `}
     render={data => <Header data={data} {...props} />}
   />
-)
+);
