@@ -27,7 +27,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify-cache`,
     // {
     //   resolve: "gatsby-plugin-web-font-loader",
     //   options: {
@@ -53,7 +52,7 @@ module.exports = {
       options: {
         repositoryName: `repository-name`,
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: ({ node, key, value }) => (post) => `/${post.uid}`,
         schemas: {
           homepage: require("./src/schemas/homepage.json"),
         },

@@ -1,22 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
-import usePreviewData from "./utils/usePreviewData";
 import styled from "styled-components";
+import { withPreview } from "gatsby-source-prismic";
 
-export const Index = ({ data }) => {
-  const liveData = usePreviewData(data);
-
+const Index = ({ data }) => {
   return (
-    <Layout>
-      <h1>{liveData.prismicPage.data.title}</h1>
+    <>
+      <h1>{data.prismicPage.data.title}</h1>
       <div
         dangerouslySetInnerHTML={{
-          __html: liveData.prismicPage.data.body.html,
+          __html: data.prismicPage.data.body.html,
         }}
       />
-    </Layout>
+    </>
   );
 };
+
+export default withPreview(Index);
 
 export const query = graphql`
   query($id: String!) {

@@ -5,7 +5,10 @@ import styled from "styled-components";
 import { BaseCSS, GridThemeProvider } from "styled-bootstrap-grid";
 import { Normalize } from "styled-normalize";
 
+// Styles
 import GlobalStyles from "../styles/globalStyles";
+
+// Components
 import App from "./app";
 // import DefaultSEO from "./default-seo";
 
@@ -35,7 +38,7 @@ const gridTheme = {
   },
 };
 
-export const Layout = ({ children }) => (
+const Layout = ({ children }) => (
   <GridThemeProvider gridTheme={gridTheme}>
     <Location>
       {({ location }) => {
@@ -52,3 +55,5 @@ export const Layout = ({ children }) => (
     </Location>
   </GridThemeProvider>
 );
+
+export Layout;
