@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -31,16 +31,16 @@ const FooterWrapper = styled.footer`
       padding-right: 0;
     }
   }
-`
+`;
 
-const Footer = () => (
+export const Footer = () => (
   <FooterWrapper>
     <ul>
       <li>
-        <a href="" target="_blank" rel="noopener noreferrer"></a>
+        <a href="" target="_blank" rel="noopener noreferrer">
+          Link
+        </a>
       </li>
     </ul>
   </FooterWrapper>
-)
-
-export default Footer
+);

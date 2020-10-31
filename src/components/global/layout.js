@@ -9,8 +9,8 @@ import { Normalize } from "styled-normalize";
 import GlobalStyles from "../styles/globalStyles";
 
 // Components
-import App from "./app";
-// import DefaultSEO from "./default-seo";
+import { App } from "./app";
+import { DefaultSEO } from "./default-seo";
 
 const Container = styled.div`
   position: relative;
@@ -56,4 +56,4 @@ const Layout = ({ children }) => (
   </GridThemeProvider>
 );
 
-export Layout;
+export default Layout;

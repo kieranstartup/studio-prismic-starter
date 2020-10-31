@@ -6,7 +6,11 @@ import { withPreview } from "gatsby-source-prismic";
 const Index = ({ data }) => {
   return (
     <>
-      <h1>{data.prismicPage.data.title}</h1>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.prismicPage.data.title.html,
+        }}
+      />
       <div
         dangerouslySetInnerHTML={{
           __html: data.prismicPage.data.body.html,
@@ -22,7 +26,9 @@ export const query = graphql`
   query($id: String!) {
     prismicPage(id: { eq: $id }) {
       data {
-        title
+        title {
+          html
+        }
         body {
           html
         }

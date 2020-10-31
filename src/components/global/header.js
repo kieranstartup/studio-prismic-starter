@@ -4,8 +4,8 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import Media from "react-media";
 
 // Components
-// import DesktopMenu from "../navigation/desktop-menu"
-// import MobileMenu from "../navigation/mobile-menu"
+import { DesktopMenu } from "../navigation/desktop-menu";
+import { MobileMenu } from "../navigation/mobile-menu";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -30,9 +30,21 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const Header = ({ location, data, pageTitle }) => {
+export const Header = ({ location }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+          }
+        }
+      }
+    }
+  `);
+
   const [windowWidth, setWindowWidth] = useState(768);
-  const [hideOnScroll, setHideOnScroll] = useState(true);
 
   useEffect(() => {
     if (typeof window !== `undefined`) {
@@ -48,9 +60,7 @@ const Header = ({ location, data, pageTitle }) => {
         render={() => (
           <MobileMenu
             links={data.site.siteMetadata.menuLinks}
-            text={data.prismicMenu.data.mobile_menu_text}
             location={location.pathname}
-            hideOnScroll={hideOnScroll}
           />
         )}
       />
@@ -62,29 +72,9 @@ const Header = ({ location, data, pageTitle }) => {
           <DesktopMenu
             links={data.site.siteMetadata.menuLinks}
             location={location.pathname}
-            title={pageTitle}
-            hideOnScroll={hideOnScroll}
           />
         )}
       />
     </HeaderWrapper>
   );
 };
-
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query HeadingQuery {
-        site {
-          siteMetadata {
-            menuLinks {
-              name
-              link
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Header data={data} {...props} />}
-  />
-);
