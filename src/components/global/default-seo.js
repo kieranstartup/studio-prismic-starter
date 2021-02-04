@@ -3,23 +3,23 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
 export const DefaultSEO = () => {
-  const data = useStaticQuery(graphql`
-    {
-      prismicSeo {
-        data {
-          seo_description {
-            text
-          }
-          seo_keywords {
-            text
-          }
-          seo_image {
-            url
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     prismicSeo {
+  //       data {
+  //         seo_description {
+  //           text
+  //         }
+  //         seo_keywords {
+  //           text
+  //         }
+  //         seo_image {
+  //           url
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <Helmet
@@ -31,54 +31,54 @@ export const DefaultSEO = () => {
           content:
             "width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1",
         },
-        {
-          name: "description",
-          content: `${data.prismicSeo.data.seo_description.text}`,
-        },
-        {
-          name: "keywords",
-          content: `${data.prismicSeo.data.seo_keywords.text}`,
-        },
-        {
-          name: "og:image",
-          content: `${data.prismicSeo.data.seo_image.url}`,
-        },
-        {
-          name: "og:image:secure_url",
-          content: `${data.prismicSeo.data.seo_image.url}`,
-        },
-        {
-          name: "og:description",
-          content: `${data.prismicSeo.data.seo_description.text}`,
-        },
-        {
-          name: "og:image:width",
-          content: `1200`,
-        },
-        {
-          name: "og:image:height",
-          content: `630`,
-        },
-        {
-          name: "og:locale",
-          content: `en`,
-        },
-        {
-          name: "twitter:title",
-          content: `Title`,
-        },
-        {
-          name: "twitter:description",
-          content: `${data.prismicSeo.data.seo_description.text}`,
-        },
-        {
-          name: "twitter:card",
-          content: `summary_large_image`,
-        },
-        {
-          name: "twitter:image",
-          content: `${data.prismicSeo.data.seo_image.url}`,
-        },
+        // {
+        //   name: "description",
+        //   content: `${data.prismicSeo.data.seo_description.text}`,
+        // },
+        // {
+        //   name: "keywords",
+        //   content: `${data.prismicSeo.data.seo_keywords.text}`,
+        // },
+        // {
+        //   name: "og:image",
+        //   content: `${data.prismicSeo.data.seo_image.url}`,
+        // },
+        // {
+        //   name: "og:image:secure_url",
+        //   content: `${data.prismicSeo.data.seo_image.url}`,
+        // },
+        // {
+        //   name: "og:description",
+        //   content: `${data.prismicSeo.data.seo_description.text}`,
+        // },
+        // {
+        //   name: "og:image:width",
+        //   content: `1200`,
+        // },
+        // {
+        //   name: "og:image:height",
+        //   content: `630`,
+        // },
+        // {
+        //   name: "og:locale",
+        //   content: `en`,
+        // },
+        // {
+        //   name: "twitter:title",
+        //   content: `Title`,
+        // },
+        // {
+        //   name: "twitter:description",
+        //   content: `${data.prismicSeo.data.seo_description.text}`,
+        // },
+        // {
+        //   name: "twitter:card",
+        //   content: `summary_large_image`,
+        // },
+        // {
+        //   name: "twitter:image",
+        //   content: `${data.prismicSeo.data.seo_image.url}`,
+        // },
       ]}
       link={[
         {

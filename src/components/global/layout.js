@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Location } from "@reach/router";
 import styled from "styled-components";
 import { BaseCSS, GridThemeProvider } from "styled-bootstrap-grid";
@@ -47,7 +46,7 @@ const Layout = ({ children }) => (
             <Normalize />
             <BaseCSS />
             <GlobalStyles />
-            {/* <DefaultSEO location={location} data={data} /> */}
+            <DefaultSEO />
             <App location={location.pathname} children={children} />
           </Container>
         );

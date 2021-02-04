@@ -35,18 +35,18 @@ module.exports = {
     //     },
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Website Name`,
-        short_name: `Website Name`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#ffffff`,
-        display: `standalone`,
-        // icon: `src/images/icon.png`, // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Website Name`,
+    //     short_name: `Website Name`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#ffffff`,
+    //     display: `standalone`,
+    //     icon: `src/images/icon.png`, // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: `gatsby-source-prismic`,
       options: {

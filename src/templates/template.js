@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import { withPreview } from "gatsby-source-prismic";
 
-const Index = ({ data }) => {
+const Template = ({ data }) => {
   return (
     <>
       <div
@@ -20,11 +20,11 @@ const Index = ({ data }) => {
   );
 };
 
-export default withPreview(Index);
+export default withPreview(Template);
 
 export const query = graphql`
-  {
-    prismicPage {
+  query($id: String!) {
+    prismicPage(id: { eq: $id }) {
       data {
         title {
           html

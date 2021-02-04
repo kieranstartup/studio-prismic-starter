@@ -2,6 +2,7 @@ import * as React from "react";
 import { withUnpublishedPreview } from "gatsby-source-prismic";
 
 import Index from "./index";
+import Template from "../templates/template";
 
 const NotFoundPage = () => (
   <>
@@ -13,5 +14,6 @@ const NotFoundPage = () => (
 export default withUnpublishedPreview(NotFoundPage, {
   templateMap: {
     homepage: Index,
+    template: Template,
   },
 });
