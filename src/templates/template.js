@@ -6,7 +6,8 @@ import { withPreview } from "gatsby-source-prismic";
 const Template = ({ data }) => {
   return (
     <>
-      <div
+      <h1>Template</h1>
+      {/* <div
         dangerouslySetInnerHTML={{
           __html: data.prismicPage.data.title.html,
         }}
@@ -15,24 +16,24 @@ const Template = ({ data }) => {
         dangerouslySetInnerHTML={{
           __html: data.prismicPage.data.body.html,
         }}
-      />
+      /> */}
     </>
   );
 };
 
 export default withPreview(Template);
 
-export const query = graphql`
-  query($id: String!) {
-    prismicPage(id: { eq: $id }) {
-      data {
-        title {
-          html
-        }
-        body {
-          html
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($uid: String!) {
+//     prismicPage(uid: { eq: $uid }) {
+//       data {
+//         title {
+//           html
+//         }
+//         body {
+//           html
+//         }
+//       }
+//     }
+//   }
+// `;

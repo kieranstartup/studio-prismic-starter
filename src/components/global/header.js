@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { StaticQuery, graphql, Link } from "gatsby";
-import Media from "react-media";
+// import Media from "react-media";
 
 // Components
 import { DesktopMenu } from "../navigation/desktop-menu";
@@ -31,18 +31,18 @@ const HeaderWrapper = styled.header`
 `;
 
 export const Header = ({ location }) => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          menuLinks {
-            name
-            link
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     site {
+  //       siteMetadata {
+  //         menuLinks {
+  //           name
+  //           link
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   const [windowWidth, setWindowWidth] = useState(768);
 
@@ -54,7 +54,7 @@ export const Header = ({ location }) => {
   }, []);
   return (
     <HeaderWrapper>
-      <Media
+      {/* <Media
         queries={{ medium: "(max-width: 768px)" }}
         defaultMatches={{ medium: windowWidth === 768 }}
         render={() => (
@@ -74,7 +74,7 @@ export const Header = ({ location }) => {
             location={location.pathname}
           />
         )}
-      />
+      /> */}
     </HeaderWrapper>
   );
 };
