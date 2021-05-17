@@ -27,14 +27,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: "gatsby-plugin-web-font-loader",
-    //   options: {
-    //     google: {
-    //       families: ["Droid Sans", "Droid Serif"],
-    //     },
-    //   },
-    // },
+//  {
+//       resolve: "gatsby-plugin-web-font-loader",
+//       options: {
+//         custom: {
+//           families: ["transcript-bold-pro"],
+//           urls: ["/fonts/fonts.css"],
+//         },
+//       },
+//     },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
